@@ -1,0 +1,12 @@
+# 実行から除外するルール
+disabled_rules:
+# テストコード、Pod等のライブラリは対象外
+excluded:
+- Pods/
+- Podfile
+- Podfile.lock
+
+force_cast: warning
+
+# 1行あたりの文字数制限
+line_length: 300

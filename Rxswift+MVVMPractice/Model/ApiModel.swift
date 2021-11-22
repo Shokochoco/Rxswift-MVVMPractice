@@ -7,9 +7,9 @@ final class ApiModel {
         return Observable.create { observer in
             let url = "https://connpass.com/api/v1/event/?keyword=\(word)"
             AF.request(url, method: .get, parameters: nil)
-                .responseJSON(completionHandler:{ response in
+                .responseJSON(completionHandler: { response in
                     switch response.result {
-                    case .success(_):
+                    case .success:
                         print("API SUCCESS\n")
                         if let data = response.data {
                             let decoder = JSONDecoder()
@@ -29,7 +29,6 @@ final class ApiModel {
             return Disposables.create()
         }
     }
-    
 }
 
 struct Events: Codable {
